@@ -2,12 +2,16 @@ from binance.client import Client
 import logging
 import config
 
-client = Client(api_key, api_secret)
-
 # Configure logging
 logging.basicConfig(filename='crypto_bot.log', level=logging.INFO,
                     format='%(asctime)s:%(levelname)s:&(message)s')
 
+# Retrieive API key and secret from env variables
+api_key = os.getenv('BINANCE_API_KEY')
+api_secret = os.getenv('BINANCE_API_SECRET')
+
+# Initialise Binance client with key and secret
+client = Client(api_key, api_secret)
 
 def place_order(symbol, quantity, price, order_type="LIMIT", side="BUY"):
     try:
