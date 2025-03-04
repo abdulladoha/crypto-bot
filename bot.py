@@ -1,3 +1,6 @@
+# The binance.client module provides the Client class for interacting with the Binance API
+# Client class allows you to make authenticated API requests to trade, get market data, etc.
+# Documentation: https://python-binance.readthedocs.io/en/latest/
 from binance.client import Client
 import logging
 import config
